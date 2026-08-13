@@ -1,0 +1,366 @@
+.contact {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 28px 6% 70px;
+    box-sizing: border-box;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.contact__container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #c9a24d;
+}
+
+/* =========================
+   IZQUIERDA
+========================= */
+
+.contact__left {
+    padding: 50px 55px 65px 40px;
+
+    border-right: 1px solid #c9a24d;
+    border-bottom: 1px solid #c9a24d;
+}
+
+.contact__eyebrow {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #c9a24d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    letter-spacing: 0.3px;
+}
+
+.contact__title {
+    margin: 0 0 20px;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 0.98;
+}
+
+.contact__description {
+    max-width: 570px;
+
+    margin: 0;
+
+    color: #f2f2f2;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.42;
+
+    text-align: justify;
+}
+
+/* =========================
+   COBERTURA
+========================= */
+
+.contact__coverage {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+
+    margin-top: 25px;
+}
+
+.contact__coverage-icon {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contact__coverage-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+.contact__coverage p {
+    margin: 0;
+    margin-top: -7px;
+
+    color: #ddd;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.contact__coverage strong {
+    color: #c9a24d;
+    font-weight: 400;
+}
+
+/* =========================
+   DERECHA
+========================= */
+
+.contact__right {
+    padding: 32px 40px;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    min-height: 86px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid rgba(201, 162, 77, 0.35);
+}
+
+.contact__item:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   ICONOS
+========================= */
+
+.contact__icon {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9a24d;
+    border-radius: 50%;
+}
+
+.contact__icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================
+   TEXTO CONTACTO
+========================= */
+
+.contact__item-content h3 {
+    margin: 0 0 5px;
+
+    color: #c9a24d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.contact__item-content p {
+    margin: 0;
+
+    color: #e5e5e5;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* =========================
+   PARTE INFERIOR
+========================= */
+
+.contact__bottom {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 42px 35px 0;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.contact__logo {
+    display: flex;
+    align-items: center;
+}
+
+.contact__logo-text {
+    display: flex;
+}
+
+.contact__logo-text img {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   REDES SOCIALES
+========================= */
+
+.contact__social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact__social>span {
+    margin-right: 5px;
+
+    color: #c9a24d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.contact__social a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    border: 1px solid #c9a24d;
+    border-radius: 50%;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.contact__social a img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+.contact__social a:hover img {
+    opacity: 0.85;
+}
+
+.contact__social a:hover {
+    background: #c9a24d;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .contact {
+        padding: 20px 5% 50px;
+    }
+
+    .contact__container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__left {
+        border-right: none;
+        padding: 45px 30px 50px;
+    }
+
+    .contact__right {
+        padding: 30px;
+    }
+
+    .contact__bottom {
+        padding: 35px 20px 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+    }
+
+    .contact__logo-text img {
+        max-width: 230px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .contact {
+        padding: 15px 20px 40px;
+    }
+
+    .contact__left {
+        padding: 35px 10px 40px;
+    }
+
+    .contact__eyebrow {
+        font-size: 20px;
+    }
+
+    .contact__title {
+        font-size: 39px;
+    }
+
+    .contact__description {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .contact__right {
+        padding: 25px 10px;
+    }
+
+    .contact__item {
+        gap: 15px;
+    }
+
+    .contact__item-content p {
+        font-size: 14px;
+    }
+
+    .contact__bottom {
+        padding: 30px 10px 0;
+    }
+
+    .contact__logo-text img {
+        max-width: 200px;
+    }
+
+    .contact__social {
+        flex-wrap: wrap;
+    }
+}

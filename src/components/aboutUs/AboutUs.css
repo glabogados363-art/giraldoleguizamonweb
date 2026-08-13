@@ -1,0 +1,151 @@
+.nosotros {
+    width: 100%;
+    background-color: #20282b;
+    padding: 80px 6%;
+    box-sizing: border-box;
+}
+
+.nosotros__container {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* =========================
+   IMAGEN
+========================= */
+
+.nosotros__image {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #d2a84e;
+}
+
+.nosotros__slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.nosotros__slide--active {
+    opacity: 1;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.nosotros__content {
+    color: #ffffff;
+}
+
+.nosotros__title {
+    display: inline-block;
+    margin: 0 0 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #ffffff;
+    border-bottom: 2px solid #d2a84e;
+    padding-bottom: 8px;
+}
+
+.nosotros__text {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.nosotros__text p {
+    margin: 0 0 25px;
+    color: #ffffff;
+    text-align: justify;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.nosotros__button {
+    margin-top: 10px;
+    padding: 16px 26px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d2a84e;
+    color: #111111;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nosotros__button:hover {
+    transform: translateY(-2px);
+    background-color: #e0b963;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .nosotros {
+        padding: 60px 5%;
+    }
+
+    .nosotros__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .nosotros__image {
+        height: 500px;
+    }
+
+    .nosotros__content {
+        text-align: left;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+    .nosotros {
+        padding: 50px 20px;
+    }
+
+    .nosotros__image {
+        height: 400px;
+    }
+
+    .nosotros__title {
+        font-size: 30px;
+    }
+
+    .nosotros__text {
+        font-size: 15px;
+    }
+
+    .nosotros__button {
+        width: 100%;
+    }
+}
