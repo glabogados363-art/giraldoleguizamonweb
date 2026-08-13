@@ -3,10 +3,10 @@ import "./Header.css"
 import Logo from "../../../public/photoLogoAbogadoYAsociados.png"
 
 interface HeaderProps {
-    onOpenConsulta?: () => void
+    onOpenContact?: () => void
 }
 
-export function Header({ onOpenConsulta }: HeaderProps) {
+export function Header({ onOpenContact }: HeaderProps) {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
@@ -40,7 +40,7 @@ export function Header({ onOpenConsulta }: HeaderProps) {
                         className="btn-primary"
                         onClick={() => {
                             setMenuOpen(false)
-                            onOpenConsulta?.()
+                            onOpenContact?.()
                         }}
                     >
                         Consulta tu caso

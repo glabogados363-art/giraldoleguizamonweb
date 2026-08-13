@@ -8,23 +8,18 @@ import { Contact } from "./components/contact/Contact"
 import { Modal } from "./components/modal/Modal"
 import { Footer } from "./components/footer/Footer"
 
-type ModalMode = "consulta" | "pqrs" | "mensaje"
-
 function App() {
-  const [modalMode, setModalMode] = useState<ModalMode | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <>
-      <Header onOpenConsulta={() => setModalMode("consulta")} />
+      <Header onOpenContact={() => setModalOpen(true)} />
       <Hero />
       <AboutUs />
       <Services />
       <Team />
-      <Contact
-        onOpenPqrs={() => setModalMode("pqrs")}
-        onOpenMensaje={() => setModalMode("mensaje")}
-      />
-      <Modal mode={modalMode} onClose={() => setModalMode(null)} />
+      <Contact onOpenContact={() => setModalOpen(true)} />
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
       <Footer />
     </>
   )
