@@ -2,20 +2,21 @@
     position: relative;
     background: #000;
     color: #fff;
+    padding: 50px 0 0 100px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(280px, 42vw, 880px);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: clamp(32px, 5vw, 80px);
-    min-height: 100vh;
-    min-height: 100svh;
-    padding: 50px clamp(24px, 6vw, 100px) 0;
+    height: 100vh;
 }
 
 .hero__container {
     position: relative;
-    width: 100%;
-    min-width: 0;
+    width: min(1000px, 85%);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 80px;
 }
 
 .hero__content {
@@ -88,7 +89,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 58vw;
     height: 2px;
     background: #caa24c;
 }
@@ -129,31 +130,58 @@
     transform: translateY(-2px);
 }
 
-/* ---------- Imagen / Logo ---------- */
+/* ---------- Imagen ---------- */
 
 .hero__image {
-    position: relative;
-    width: 100%;
-    justify-self: end;
-    transform: translateX(clamp(0px, 8vw, 160px));
-    pointer-events: none;
+    /* position: absolute; */
+    right: 0;
+    top: 0;
+    width: 900px;
+    height: 200%;
+    pointer-events: none; 
+    margin-left: -225px;
 }
 
 .hero__image img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 2 / 3;
+    height: 100%;
     display: block;
     object-fit: contain;
+    margin-top: 90px;
 }
 
 /* ---------- Responsive ---------- */
 
+@media (max-width: 1400px) {
+    .hero {
+        gap: clamp(32px, 4vw, 80px);
+        padding-left: clamp(24px, 6vw, 100px);
+    }
+
+    .hero__container {
+        width: min(1000px, 50%);
+    }
+
+    .hero__image {
+        width: clamp(340px, 42vw, 900px);
+        margin-left: clamp(-120px, -10vw, -225px);
+    }
+}
+
 @media (max-width: 992px) {
     .hero {
-        grid-template-columns: 1fr;
-        gap: 48px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 100vh;
         padding: 70px 24px;
+        gap: 48px;
+    }
+
+    .hero__container {
+        width: 100%;
+        gap: 0;
     }
 
     .hero__content {
@@ -174,6 +202,10 @@
         padding: 25px 0;
     }
 
+    .hero__divider-top {
+        width: 100%;
+    }
+
     .hero__divider-right {
         display: none;
     }
@@ -184,10 +216,21 @@
     }
 
     .hero__image {
-        justify-self: center;
-        transform: none;
+        position: relative;
+        right: 0;
+        top: 0;
         width: min(300px, 70vw);
+        height: auto;
+        order: 0;
+        margin: 0 auto;
         pointer-events: auto;
+    }
+
+    .hero__image img {
+        aspect-ratio: 2 / 3;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
     }
 
     .hero__top-line,
