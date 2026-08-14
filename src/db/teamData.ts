@@ -69,7 +69,7 @@ export const teamData: TeamMember[] = [
     id: 7,
     image: Edwin,
     name: "EDWIN VARGAS BLANDON ",
-    position: "Técnico en Gestión y Opeeratividad",
+    position: "Técnico en Gestión y Operatividad",
     description:
       "Técnico experto en gestión operativa y logística integral, con un rol fundamental en la fluidez de nuestros procesos administrativos. Se encarga de la gestión y radicación de documentos, asegurando el cumplimiento ágil de trámites y diligencias externas. Como enlace comercial estratégico, lidera la búsqueda y consolidación de alianzas, siendo un punto de contacto clave para nuestros clientes y aliados. Su enfoque técnico y proactivo garantiza que cada operación de la firma se ejecute con eficiencia, puntualidad y compromiso, fortaleciendo nuestra presencia y capacidad de respuesta en el mercado.",
   },
