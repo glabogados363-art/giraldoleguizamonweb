@@ -77,7 +77,7 @@ export function Footer() {
 
                             <p>
                                 <strong>Cobertura:</strong>{" "}
-                                Presencia en todo el Eje Cafetero
+                                Presencia en el Eje Cafetero y atención a nivel nacional
                             </p>
                         </div>
                     </div>
