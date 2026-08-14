@@ -1,61 +1,15 @@
-import { useState, useEffect } from "react"
 import "./AboutUs.css"
-import Img2549 from "../../assets/IMG_2549.jpg"
-import Img2555 from "../../assets/IMG_2555.jpg"
-import Img2562 from "../../assets/IMG_2562.jpg"
-import Img2564 from "../../assets/IMG_2564.jpg"
-import Img2565 from "../../assets/IMG_2565.jpg"
 import Img2569 from "../../assets/IMG_2569.jpg"
-import Img2570 from "../../assets/IMG_2570.jpg"
-import Img2571 from "../../assets/IMG_2571.jpg"
-import Img2593 from "../../assets/IMG_2593.jpg"
-import Img2605 from "../../assets/IMG_2605.jpg"
-import Img2614 from "../../assets/IMG_2614.jpg"
-import PhotoHero from "../../assets/photoHero.png"
-import PhotoLaws from "../../assets/photoLaws.png"
-
-const aboutUsImages = [
-    Img2549,
-    Img2555,
-    Img2562,
-    Img2564,
-    Img2565,
-    Img2569,
-    Img2570,
-    Img2571,
-    Img2593,
-    Img2605,
-    Img2614,
-    PhotoHero,
-    PhotoLaws,
-];
 
 export function AboutUs() {
-    const [activeIndex, setActiveIndex] = useState(0)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % aboutUsImages.length)
-        }, 4000)
-        return () => clearInterval(interval)
-    }, [])
-
     return (
         <>
-            <section className="nosotros" id="nosotros">
+            <section
+                className="nosotros"
+                id="nosotros"
+                style={{ backgroundImage: `url(${Img2569})` }}
+            >
                 <div className="nosotros__container">
-
-                    {/* Imagen - carrusel */}
-                    <div className="nosotros__image">
-                        {aboutUsImages.map((image, index) => (
-                            <img
-                                key={index}
-                                src={image}
-                                alt={`Giraldo Leguizamón ${index + 1}`}
-                                className={`nosotros__slide${activeIndex === index ? " nosotros__slide--active" : ""}`}
-                            />
-                        ))}
-                    </div>
 
                     {/* Contenido */}
                     <div className="nosotros__content">
