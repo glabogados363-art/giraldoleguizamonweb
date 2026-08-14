@@ -4,14 +4,17 @@ import Img2569 from "../../assets/IMG_2569.jpg"
 export function AboutUs() {
     return (
         <>
-            <section
-                className="nosotros"
-                id="nosotros"
-                style={{ backgroundImage: `url(${Img2569})` }}
-            >
+            <section className="nosotros" id="nosotros">
                 <div className="nosotros__container">
 
-                    {/* Contenido */}
+                    <div className="nosotros__image">
+                        <img
+                            className="nosotros__image-img"
+                            src={Img2569}
+                            alt="Giraldo Leguizamón"
+                        />
+                    </div>
+
                     <div className="nosotros__content">
                         <h2 className="nosotros__title">
                             NOSOTROS

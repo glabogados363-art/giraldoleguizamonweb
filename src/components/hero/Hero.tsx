@@ -1,4 +1,4 @@
-import heroImage from "../../assets/IMG_2599.jpg"
+import Logo from "../../../public/logo.png"
 import "./Hero.css"
 
 export function Hero() {
@@ -43,7 +43,7 @@ export function Hero() {
                 </div>
 
                 <div className="hero__image">
-                    <img src={heroImage} alt="Abogado" />
+                    <img src={Logo} alt="Giraldo Leguizamón" />
                 </div>
             </section>
         </>
