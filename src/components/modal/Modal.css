@@ -208,10 +208,57 @@
 .modal__privacy-link {
     color: #c9a34e;
     text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .modal__privacy-link:hover {
     text-decoration: underline;
+}
+
+/* ---------- Terms / Privacy ---------- */
+
+.modal__terms {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal__terms::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal__terms::-webkit-scrollbar-thumb {
+    background: #d6c08a;
+    border-radius: 3px;
+}
+
+.modal__term + .modal__term {
+    margin-top: 22px;
+}
+
+.modal__term-title {
+    margin: 0 0 8px;
+    color: #000;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.modal__term-text {
+    margin: 0;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 /* ---------- Submit ---------- */

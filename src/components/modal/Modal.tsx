@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import "./Modal.css"
 import { servicesData } from "../../db/servicesData"
+import { termsData } from "../../db/termsData"
 
 const WhatsappIcon = () => (
     <svg
@@ -18,6 +19,8 @@ const WhatsappIcon = () => (
 
 type ModalStatus = "idle" | "loading" | "success" | "error"
 
+type ModalView = "form" | "privacy"
+
 interface ModalProps {
     open: boolean
     onClose: () => void
@@ -31,11 +34,17 @@ const asuntoOptions = [
 export function Modal({ open, onClose }: ModalProps) {
     const overlayRef = useRef<HTMLDivElement>(null)
     const [status, setStatus] = useState<ModalStatus>("idle")
+    const [view, setView] = useState<ModalView>("form")
 
     const handleClose = useCallback(() => {
         setStatus("idle")
+        setView("form")
         onClose()
     }, [onClose])
+
+    const handleShowPrivacy = useCallback(() => {
+        setView("privacy")
+    }, [])
 
     useEffect(() => {
         if (!open) return
@@ -106,12 +115,36 @@ export function Modal({ open, onClose }: ModalProps) {
                     &#10005;
                 </button>
 
-                <h2 className="modal__title">Cuéntanos tu caso</h2>
-                <p className="modal__subtitle">
-                    Déjanos tus datos y descríbenos brevemente tu situación.
-                    Nuestro equipo te contactará a la mayor brevedad posible.
-                </p>
-                <div className="modal__divider" />
+                {view === "privacy" ? (
+                    <>
+                        <h2 className="modal__title">Términos y Condiciones</h2>
+                        <div className="modal__divider" />
+
+                        <div className="modal__terms">
+                            {termsData.map((section) => (
+                                <section className="modal__term" key={section.id}>
+                                    <h3 className="modal__term-title">{section.title}</h3>
+                                    <p className="modal__term-text">{section.text}</p>
+                                </section>
+                            ))}
+                        </div>
+
+                        <button
+                            type="button"
+                            className="modal__submit"
+                            onClick={() => setView("form")}
+                        >
+                            VOLVER AL FORMULARIO
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <h2 className="modal__title">Cuéntanos tu caso</h2>
+                        <p className="modal__subtitle">
+                            Déjanos tus datos y descríbenos brevemente tu situación.
+                            Nuestro equipo te contactará a la mayor brevedad posible.
+                        </p>
+                        <div className="modal__divider" />
 
                 {status === "success" ? (
                     <div className="modal__status modal__status--success">
@@ -179,9 +212,13 @@ export function Modal({ open, onClose }: ModalProps) {
                             <span className="modal__checkbox-mark" />
                             <span className="modal__checkbox-text">
                                 Acepto el tratamiento de mis datos personales.{" "}
-                                <a href="#privacidad" className="modal__privacy-link">
+                                <button
+                                    type="button"
+                                    className="modal__privacy-link"
+                                    onClick={handleShowPrivacy}
+                                >
                                     Ver política de privacidad
-                                </a>
+                                </button>
                             </span>
                         </label>
 
@@ -209,6 +246,8 @@ export function Modal({ open, onClose }: ModalProps) {
                             Escríbenos por WhatsApp
                         </a>
                     </form>
+                )}
+                    </>
                 )}
             </div>
         </div>,
